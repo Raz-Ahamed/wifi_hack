@@ -57,7 +57,7 @@ if a=='1':
 	os.system('apt install ruby -y')
 	os.system('apt install figlet -y')
 	os.system('gem install lolcat')
-	os.system('python3 file/install.py')
+	os.system('python3 install.py')
 if a=='2':
 	os.system('clear')
 	os.system('figlet -f big WPS - Hack |lolcat')
