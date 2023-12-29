@@ -62,7 +62,7 @@ if a=='2':
 	os.system('clear')
 	os.system('figlet -f big WPS - Hack |lolcat')
 	print(green+'Root chack.......')
-	os.system('sudo python file/wps.py -i wlan0 -K')
+	os.system('sudo python3 file/wps.py -i wlan0 -K')
 	are=str(input(cyan+'Are you continue (y/n):- '))
 	if are=='y':
 		os.system('python3 wifi.py')
