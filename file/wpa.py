@@ -62,7 +62,7 @@ while True:
         os.system('clear')
         os.system('figlet -f big Thanks |lolcat')
         time.sleep(2) # টার্মিনাল কাটার আগে ২ সেকেন্ড 'Thanks' লেখাটি দেখাবে
-        os.system('kill -9 $PPID') # এটি মূল টার্মিনাল উইন্ডোটি পুরোপুরি ক্লোজ করে দেবে
+        os.system('exit') # এটি মূল টার্মিনাল উইন্ডোটি পুরোপুরি ক্লোজ করে দেবে
         sys.exit()
         
     else:
