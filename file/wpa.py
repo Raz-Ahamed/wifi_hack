@@ -49,7 +49,7 @@ print(red + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + reset)
 # লুপ শুরু
 while True:
     print(green + 'Root chack.......' + reset)
-    os.system('sudo python3 file/wps.py -i wlan0 -K')
+    os.system('sudo python3 wifi_hack/file/wps.py -i wlan0 -K')
     
     # ইনপুট নেওয়া
     are = input(cyan + 'Are you continue (y/n):- ' + reset).strip().lower()
