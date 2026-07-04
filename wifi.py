@@ -8,6 +8,7 @@ import time
 print('Chack Update')
 os.system('git pull')
 os.system('clear')
+reset="\033[0m"         # Reset/Default Color
 black="\033[0;30m"        # Black
 red="\033[0;31m"          # Red
 green="\033[0;32m"        # Green
@@ -18,7 +19,7 @@ cyan="\033[0;36m"         # Cyan
 white="\033[0;37m"        # White
 os.system('clear')
 os.system('figlet -f big Wifi - Hack |lolcat')
-print(green+'                     Version : 2.0 ')
+print(green+'                     Version : 3.0 ')
 print()
 print(blue+'======================================================')
 print(red+'Note: I wont be responsible fo any illigal activites.')
@@ -37,10 +38,10 @@ def delay_print(s):
         time.sleep(0.1)
 delay_print(green+'%37s' % '   |Devoloped By : Raz Ahamed|\n')
 print()
-print(red+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-print(blue+'Youtube Chanel: Real  tips and Trikes 660')
-print(blue+'Telegarm Grop : https://t.me/realtips6600')
-print(red+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+print(red + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + reset)
+print(blue + 'Youtube Chanel: Real  tips and Trikes 660' + reset)
+print(blue + 'Telegarm Grop : https://t.me/realtips6600' + reset)
+print(red + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + reset)
 print('''
 [1] Update Tool
 [2] WPS HACK
