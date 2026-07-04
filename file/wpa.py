@@ -7,22 +7,45 @@ import os
 import sys
 import time
 
+# কালার ভেরিয়েবলগুলো এখানে রাখা হলো
+reset="\033[0m"         
+black="\033[0;30m"      
+red="\033[0;31m"        
+green="\033[0;32m"      
+yellow="\033[0;33m"     
+blue="\033[0;34m"       
+purple="\033[0;35m"     
+cyan="\033[0;36m"       
+white="\033[0;37m"      
+
+# ===================================================
+# Auto Shortcut (Alias) Setup - এই অংশটুকু এখানে বসবে
+# ===================================================
+bashrc_path = os.path.expanduser("~/.bashrc")
+alias_cmd = 'alias wifihack="python ~/wifi_hack/file/wpa.py"\n'
+
+if os.path.exists(bashrc_path):
+    with open(bashrc_path, "r") as f:
+        content = f.read()
+else:
+    content = ""
+
+if 'alias wifihack=' not in content:
+    with open(bashrc_path, "a") as f:
+        f.write("\n# Auto-generated alias for Wifi Hack tool\n")
+        f.write(alias_cmd)
+    
+    print(green + "[+] Shortcut 'wifihack' has been added automatically!" + reset)
+    print(yellow + "[!] Type 'source ~/.bashrc' or restart Termux after exiting to use the shortcut.\n" + reset)
+    time.sleep(3) # মেসেজটি পড়ার জন্য ৩ সেকেন্ড সময় দেবে
+# ===================================================
+
+
+# এরপর থেকে আপনার আগের কোড শুরু হবে...
 print('Chack Update')
 os.system('git pull')
 os.system('clear')
 
-# কালার ভেরিয়েবল
-reset="\033[0m"         # Reset/Default Color
-black="\033[0;30m"      # Black
-red="\033[0;31m"        # Red
-green="\033[0;32m"      # Green
-yellow="\033[0;33m"     # Yellow
-blue="\033[0;34m"       # Blue
-purple="\033[0;35m"     # Purple
-cyan="\033[0;36m"       # Cyan
-white="\033[0;37m"      # White
-
-os.system('clear')
 os.system('figlet -f big Wifi - Hack |lolcat')
 print(green+'                      Version : 3.0 ' + reset)
 print()
@@ -49,22 +72,24 @@ print(red + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + reset)
 # লুপ শুরু
 while True:
     print(green + 'Root chack.......' + reset)
-    os.system('sudo python3 wifi_hack/file/wps.py -i wlan0 -K')
+    os.system('sudo python3 file/wps.py -i wlan0 -K')
     
     # ইনপুট নেওয়া
     are = input(cyan + 'Are you continue (y/n):- ' + reset).strip().lower()
     
     if are == 'y':
         os.system('python3 wpa.py')
-        continue # আবার প্রথম থেকে রান হবে
+        continue
         
     elif are == 'n':
         os.system('clear')
         os.system('figlet -f big Thanks |lolcat')
-        time.sleep(2) # টার্মিনাল কাটার আগে ২ সেকেন্ড 'Thanks' লেখাটি দেখাবে
-        os.system('kill -9 $PPID') # এটি মূল টার্মিনাল উইন্ডোটি পুরোপুরি ক্লোজ করে দেবে
-        sys.exit()
+        time.sleep(2) 
+        os.system('kill -9 $PPID') 
+        sys.exit() 
         
     else:
         print(red + "Invalid Input! Exiting..." + reset)
+        time.sleep(2)
+        os.system('kill -9 $PPID')
         sys.exit()
