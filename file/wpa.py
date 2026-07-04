@@ -62,8 +62,11 @@ while True:
         os.system('clear')
         os.system('figlet -f big Thanks |lolcat')
         time.sleep(2) # টার্মিনাল কাটার আগে ২ সেকেন্ড 'Thanks' লেখাটি দেখাবে
-        os.system('exit') # এটি মূল টার্মিনাল উইন্ডোটি পুরোপুরি ক্লোজ করে দেবে
-        sys.exit()
+        os.system('exit')
+        os.system('exit')
+        os.system('exit')
+        os.system('exit')
+        os.system('exit')
         
     else:
         print(red + "Invalid Input! Exiting..." + reset)
